@@ -8,17 +8,19 @@ async function getData(URL) {
     const response = await fetch(URL);
     const datas = await response.json();
     datas.forEach((data) => {
-      DOM.agents.insertAdjacentHTML(
-        "beforeend",
-        `
-            <div class="result">
-            <h2 class="beverage-name">${data.displayName}</h2>
-            <img class="image" src= "${data.fullPortrait}"/>
-            <p class="paragraph">Descriptions: ${data.description}</p>
-            </div>
-          `
-      );
+      console.log(data.displayName);
     });
+    // infos.forEach((info) => {
+    //   // DOM.agents.insertAdjacentHTML(
+    //   //   "beforeend",
+    //   //   `
+    //   //     <div class="result">
+    //   //     <h2 class="beverage-name">${info.displayName}</h2>
+    //   //     </div>
+    //   //   `
+    //   // );
+    //   console.log(info.displayName);
+    // });
   } catch (error) {
     console.log(error);
   }

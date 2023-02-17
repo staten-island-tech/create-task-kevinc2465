@@ -4,7 +4,11 @@ body{
     font-family: 'Libre Baskerville', serif;
 };    
 h1{
+    color: white;
     font-size: 5rem;
     margin-left: 3rem;
-    color: white;
 }
+.buttons{
+    display: flex;
+    justify-content: space-around;
+  }

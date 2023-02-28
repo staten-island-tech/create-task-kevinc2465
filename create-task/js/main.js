@@ -7,13 +7,15 @@ async function getData(URL) {
   try {
     const response = await fetch(URL);
     const infos = await response.json();
-    console.log(infos.data[0].displayName);
+    console.log(infos.data);
     infos.data.forEach((info) => {
       DOM.agents.insertAdjacentHTML(
         "beforeend",
         `
             <div class="result">
-            <h2 class="agent-name">${info.data.displayName}</h2>
+            <h2 class="agent-name">${info.displayName}</h2>
+            <img class="image" src= "${info.bustPortrait}" alt= "agent-protrait"/>
+            <img class="skills" src= "${info.bustPortrait}" alt= "agent-protrait"/>
             </div>
             `
       );

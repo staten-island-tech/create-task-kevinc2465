@@ -7,8 +7,21 @@ h1{
     color: white;
     font-size: 5rem;
     margin-left: 3rem;
+    
 }
 .buttons{
     display: flex;
     justify-content: space-around;
   }
+
+.image{
+    height: 30rem;
+    width: 30rem;
+}
+.result{
+    width: 30%;
+    height: 40%;
+    text-align: center;
+    border-radius: 5%;
+    margin-top: 2.5rem;
+    background-color:fuchsia}

@@ -1,6 +1,5 @@
 body{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(151,148,233,1) 100%);
+    background: rgb(255, 99, 99);
     font-family: 'Libre Baskerville', serif;
 };    
 h1{
@@ -9,19 +8,24 @@ h1{
     margin-left: 3rem;
     
 }
-.buttons{
-    display: flex;
-    justify-content: space-around;
-  }
-
+.description,
+.agent-name{
+    color: rgb(255, 99, 99);
+}
 .image{
     height: 30rem;
     width: 30rem;
 }
+#agents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 .result{
     width: 30%;
     height: 40%;
     text-align: center;
     border-radius: 5%;
     margin-top: 2.5rem;
-    background-color:fuchsia}
+    background-color:black}

@@ -7,7 +7,6 @@ async function getData(URL) {
   try {
     const response = await fetch(URL);
     const infos = await response.json();
-    console.log(infos.data.role);
     infos.data.forEach((info) => {
       DOM.agents.insertAdjacentHTML(
         "beforeend",
@@ -26,3 +25,47 @@ async function getData(URL) {
 }
 
 getData(URL);
+
+function clearField() {
+  document.querySelectorAll(".result").forEach((result) => {
+    result.remove();
+  });
+}
+
+async function sortVampire() {
+  try {
+    const response = await fetch(URL);
+    const infos = await response.json();
+    const results = infos.data.filter(
+      (info) => info.developerName === `Vampire`
+    );
+    results.forEach((info) => {
+      DOM.agents.insertAdjacentHTML(
+        "beforeend",
+        `
+            <div class="result">
+            <h2 class="agent-name">${info.displayName}</h2>
+            <img class="image" src= "${info.bustPortrait}"> 
+            <p class="description">"${info.description}"</p>
+            </div>
+            `
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+DOM.Vampire.addEventListener("click", function () {
+  clearField();
+  sortVampire();
+});
+
+DOM.reset.addEventListener("click", function myFunction() {
+  clearField();
+  getData(URL);
+});
+
+DOM.up.addEventListener("click", function topFunction() {
+  document.documentElement.scrollTop = 0;
+});

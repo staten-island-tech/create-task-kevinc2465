@@ -26,12 +26,6 @@ async function getData(URL) {
 
 getData(URL);
 
-function clearField() {
-  document.querySelectorAll(".result").forEach((result) => {
-    result.remove();
-  });
-}
-
 async function sortVampire() {
   try {
     const response = await fetch(URL);
@@ -55,12 +49,6 @@ async function sortVampire() {
     console.log(error);
   }
 }
-
-DOM.Vampire.addEventListener("click", function () {
-  clearField();
-  sortVampire();
-});
-
 async function sortBountyHunter() {
   try {
     const response = await fetch(URL);
@@ -84,12 +72,19 @@ async function sortBountyHunter() {
     console.log(error);
   }
 }
-
+function clearField() {
+  document.querySelectorAll(".result").forEach((result) => {
+    result.remove();
+  });
+}
 DOM.BountyHunter.addEventListener("click", function () {
   clearField();
   sortBountyHunter();
 });
-
+DOM.Vampire.addEventListener("click", function () {
+  clearField();
+  sortVampire();
+});
 DOM.reset.addEventListener("click", function myFunction() {
   clearField();
   getData(URL);

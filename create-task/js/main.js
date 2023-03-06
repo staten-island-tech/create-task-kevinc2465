@@ -61,6 +61,35 @@ DOM.Vampire.addEventListener("click", function () {
   sortVampire();
 });
 
+async function sortBountyHunter() {
+  try {
+    const response = await fetch(URL);
+    const infos = await response.json();
+    const results = infos.data.filter(
+      (info) => info.developerName === `BountyHunter`
+    );
+    results.forEach((info) => {
+      DOM.agents.insertAdjacentHTML(
+        "beforeend",
+        `
+            <div class="result">
+            <h2 class="agent-name">${info.displayName}</h2>
+            <img class="image" src= "${info.bustPortrait}"> 
+            <p class="description">"${info.description}"</p>
+            </div>
+            `
+      );
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+DOM.BountyHunter.addEventListener("click", function () {
+  clearField();
+  sortBountyHunter();
+});
+
 DOM.reset.addEventListener("click", function myFunction() {
   clearField();
   getData(URL);

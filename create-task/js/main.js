@@ -91,5 +91,6 @@ DOM.reset.addEventListener("click", function myFunction() {
 });
 
 DOM.up.addEventListener("click", function topFunction() {
+  // the following function is made in reference to the scrool up button from w3schools
   document.documentElement.scrollTop = 0;
 });
